@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="{% static 'meetups/styles/base.css' %}">
 </head>
 <body>
-    <p>Meetups 333</p>
+    {% for i in var1 %}
+        <p>{{ i }}</p> 
+    {% endfor %}
+
 </body>
 </html>
