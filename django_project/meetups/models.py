@@ -4,7 +4,8 @@ from django.db import models
 class Location(models.Model):
     name = models. CharField(max_length=200)
     address = models. CharField(max_length=300)
-
+    def __str__(self): 
+        return f'-- {self.name}'
 
 class Meetup(models.Model):
     title = models.CharField(max_length=200)
@@ -12,3 +13,5 @@ class Meetup(models.Model):
     description = models.TextField()
     image = models.ImageField(upload_to='images')
     location = models.ForeignKey(Location, null=True, on_delete=models.SET_NULL)
+    def __str__(self): 
+        return f'-- {self.title}'
