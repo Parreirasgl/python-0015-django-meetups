@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ meetup_title }}</title>
+    <title>{{ meetup.title }}</title>
     <link rel="stylesheet" href="{% static 'meetups/styles/base.css' %}">
     <link rel="stylesheet" href="{% static 'meetups/styles/meetup-detail.css' %}">
 </head>
@@ -15,16 +15,16 @@
 <body>
     <main>
         <article>
-            <img src="" alt="">
+            <img id="main-image" src="{{meetup.image.url}}" alt="{{meetup.title}}">
             <section id="location">
                 <h2>Meetup Location</h2>
-                <address>This meetup takes place in <span>LOCATION:</span> ADDRESS.</address>
+                <address>This meetup takes place in <span>{{meetup.location.name}}:</span> {{meetup.location.address}}.</address>
             </section>
             <section id="details">
                 <h2>What's This Meetup About?</h2>
-                <p>{{ meetup_description }}</p>
+                <p>{{ meetup.description }}</p>
                 <footer>
-                    <p>Need more details? Please <a href="">contact the organizer</a> (but don't spam us :-)).</p>
+                    <p>Need more details? Please <a href="{{meetup.organizer_email}}">contact the organizer</a> (but don't spam us :-)).</p>
                 </footer>
             </section>
             <section id="registration"> 
