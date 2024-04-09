@@ -22,13 +22,10 @@ def meetup_details(request, meetup_slug):
             registration_form = RegistrationForm(request.POST)
             if registration_form.is_valid():
                 participant = registration_form.save(commit=False)
-                name = participant.name 
-                email = participant.email
-                address = participant.address
                 participant.save()
-                selected_meetup.participants.name = name
-                selected_meetup.participants.email = email
-                selected_meetup.participants.address = address
+                selected_meetup.participants.name = participant.name
+                selected_meetup.participants.email = participant.email
+                selected_meetup.participants.address = participant.address
                 selected_meetup.save()
                 return redirect('confirm-registration')
     except Exception as exc:
