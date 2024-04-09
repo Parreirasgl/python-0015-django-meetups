@@ -35,9 +35,3 @@ def meetup_details(request, meetup_slug):
     
 def confirm_registration(request): 
     return render(request, 'meetups/registration-success.html')
-
-# participant.save()
-#                 selected_meetup.participants.add(participant.name)
-#                 selected_meetup.participants.add(participant.email)
-#                 selected_meetup.participants.add(participant.address)
-#                 selected_meetup.save()
