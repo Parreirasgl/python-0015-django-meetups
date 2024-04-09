@@ -2,14 +2,19 @@ from django.db import models
 # Create your models here.
 
 class Location(models.Model):
-    name = models. CharField(max_length=200)
-    address = models. CharField(max_length=300)
+    name = models.CharField(max_length=200)
+    address = models.CharField(max_length=300)
     def __str__(self): 
         return f'-- {self.name}'
     
+# class Participant(models.Model):
+#     name = models.CharField(max_length=200)
+#     address = models.CharField(max_length=300)
+#     email = models.EmailField(unique=True)
+#     def __str__(self):
+#         return self.email
+
 class Participant(models.Model):
-    name = models.CharField(max_length=200)
-    address = models.CharField(max_length=300)
     email = models.EmailField(unique=True)
     def __str__(self):
         return self.email
