@@ -7,14 +7,9 @@ class Location(models.Model):
     def __str__(self): 
         return f'-- {self.name}'
     
-# class Participant(models.Model):
-#     name = models.CharField(max_length=200)
-#     address = models.CharField(max_length=300)
-#     email = models.EmailField(unique=True)
-#     def __str__(self):
-#         return self.email
-
 class Participant(models.Model):
+    name = models.CharField(max_length=200)
+    address = models.CharField(max_length=300)
     email = models.EmailField(unique=True)
     def __str__(self):
         return self.email
